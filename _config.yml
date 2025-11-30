@@ -1,0 +1,34 @@
+title: "AI Developer World-Class Series"
+description: "סדרת ספרונים מקצועית למפתחי AI – מאת תומר קדם"
+locale: "he"
+encoding: "utf-8"
+
+# תבנית האתר
+remote_theme: "mmistakes/minimal-mistakes"
+
+# פלאגינים הכרחיים לתבנית
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# קונפיגורציה בסיסית
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+
+# תמיכה בכיווניות ימין לשמאל
+direction: rtl
+
+# הגדרות ניווט (נוכל להרחיב בהמשך)
+nav:
+  - title: "דף הבית"
+    url: /
+  - title: "הספרים"
+    url: /books/
+  - title: "על הסדרה"
+    url: /about/
+  - title: "Inner Circle"
+    url: /inner-circle/
