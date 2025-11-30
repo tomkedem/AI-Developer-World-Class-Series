@@ -32,3 +32,15 @@ nav:
     url: /about/
   - title: "Inner Circle"
     url: /inner-circle/
+
+# Custom CSS
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+minimal_mistakes_skin: "default"
+
+# Load the RTL stylesheet
+after_head: |
+  <link rel="stylesheet" href="/AI-Developer-World-Class-Series/assets/css/custom-rtl.css">
+    
