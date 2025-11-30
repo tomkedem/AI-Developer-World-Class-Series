@@ -1,0 +1,46 @@
+/* RTL support for Minimal Mistakes */
+
+html {
+  direction: rtl;
+}
+
+body {
+  text-align: right;
+}
+
+/* כותרות */
+h1, h2, h3, h4, h5, h6 {
+  text-align: right;
+}
+
+/* רשימות */
+ul, ol {
+  direction: rtl;
+  text-align: right;
+}
+
+/* פסקאות */
+p {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ניווט עליון */
+.masthead, .masthead__inner-wrap, .greedy-nav {
+  direction: rtl;
+  text-align: right;
+}
+
+/* כיוון סרגל צד (אם יתווסף בעתיד) */
+.sidebar,
+.sidebar__right,
+.sidebar__left {
+  direction: rtl;
+  text-align: right;
+}
+
+/* תוכן עמוד */
+.page__content {
+  direction: rtl;
+  text-align: right;
+}
