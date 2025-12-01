@@ -1,5 +1,6 @@
-/* RTL support for Minimal Mistakes */
+/* Full RTL support for Minimal Mistakes */
 
+/* Base direction */
 html {
   direction: rtl;
 }
@@ -8,39 +9,95 @@ body {
   text-align: right;
 }
 
-/* כותרות */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   text-align: right;
-}
-
-/* רשימות */
-ul, ol {
   direction: rtl;
-  text-align: right;
 }
 
-/* פסקאות */
+/* Paragraphs */
 p {
   direction: rtl;
   text-align: right;
 }
 
-/* ניווט עליון */
-.masthead, .masthead__inner-wrap, .greedy-nav {
+/* Lists */
+ul, ol {
+  direction: rtl;
+  padding-right: 1.5rem;
+  padding-left: 0;
+}
+
+/* Blockquotes */
+blockquote {
+  direction: rtl;
+  border-right: 4px solid #ccc;
+  border-left: none;
+  text-align: right;
+  padding-right: 1rem;
+}
+
+/* Tables */
+table {
+  direction: rtl;
+}
+
+table th, table td {
+  text-align: right;
+}
+
+/* Header and navigation */
+.masthead,
+.masthead__inner-wrap,
+.greedy-nav {
   direction: rtl;
   text-align: right;
 }
 
-/* כיוון סרגל צד (אם יתווסף בעתיד) */
-.sidebar,
-.sidebar__right,
-.sidebar__left {
+/* Mobile menu toggle */
+.greedy-nav__toggle {
+  float: left;
+}
+
+/* Page content */
+.page__content,
+.page__meta {
   direction: rtl;
   text-align: right;
 }
 
-/* תוכן עמוד */
-.page__content {
+/* Sidebar */
+.sidebar {
+  direction: rtl;
+}
+
+.sidebar__right {
+  float: left;
+}
+
+/* Buttons */
+.btn {
+  direction: rtl;
+}
+
+/* Hero section */
+.hero,
+.hero__content {
   direction: rtl;
   text-align: right;
+}
+
+/* Cards layout */
+.cards {
+  direction: rtl;
+}
+
+.card {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Global links */
+a {
+  direction: rtl;
 }

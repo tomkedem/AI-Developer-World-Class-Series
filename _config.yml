@@ -1,28 +1,26 @@
+# Site metadata
 title: "AI Developer World-Class Series"
-description: "סדרת ספרונים מקצועית למפתחי AI – מאת תומר קדם"
+description: "סדרת ספרונים מקצועית למפתחי AI, מאת תומר קדם"
 locale: "he"
 encoding: "utf-8"
 
-# תבנית האתר
+# Theme configuration
 remote_theme: "mmistakes/minimal-mistakes"
 
-# פלאגינים הכרחיים לתבנית
+# Required plugins for the theme
 plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
 
-# קונפיגורציה בסיסית
+# Markdown configuration
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
   auto_ids: true
 
-# תמיכה בכיווניות ימין לשמאל
-direction: rtl
-
-# הגדרות ניווט (נוכל להרחיב בהמשך)
+# Main navigation
 nav:
   - title: "דף הבית"
     url: /
@@ -33,14 +31,14 @@ nav:
   - title: "Inner Circle"
     url: /inner-circle/
 
-# Custom CSS
+# Custom Sass/CSS
 sass:
   sass_dir: assets/css
   style: compressed
 
+# Minimal Mistakes skin
 minimal_mistakes_skin: "default"
 
-# Load the RTL stylesheet
+# Load custom RTL stylesheet
 after_head: |
-  <link rel="stylesheet" href="/AI-Developer-World-Class-Series/assets/css/custom-rtl.css">
-    
+  <link rel="stylesheet" href="{{ "/assets/css/custom-rtl.css" | relative_url }}">
