@@ -8,10 +8,12 @@
 cache/
 tmp/
 
-# Node stuff (רק אם תוסיף בעתיד)
+# Node (אם תוסיף בעתיד)
 node_modules/
-package-lock.json
 npm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # macOS
 .DS_Store
