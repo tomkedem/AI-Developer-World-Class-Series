@@ -1,0 +1,10 @@
+baseURL = "https://tomkedem.github.io/AI-Developer-World-Class-Series/"
+languageCode = "he-il"
+title = "AI Developer World Class Series"
+theme = "book"
+
+[params]
+  BookSection = "books"
+  BookToC = true
+  BookSearch = true
+  BookRepo = "https://github.com/tomkedem/AI-Developer-World-Class-Series"

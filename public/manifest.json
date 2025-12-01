@@ -1,0 +1,15 @@
+{
+  "name": "AI Developer World Class Series",
+  "short_name": "AI Developer World Class Series",
+  "start_url": "/AI-Developer-World-Class-Series/",
+  "scope": "/AI-Developer-World-Class-Series/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/AI-Developer-World-Class-Series/favicon.svg",
+      "sizes": "512x512"
+    }
+  ]
+}
