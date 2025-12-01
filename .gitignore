@@ -1,0 +1,28 @@
+# Hugo build output
+/public/
+/resources/_gen/
+
+# Hugo cache
+/.hugo_build.lock
+/.hugo_build_dir/
+cache/
+tmp/
+
+# Node stuff (רק אם תוסיף בעתיד)
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
