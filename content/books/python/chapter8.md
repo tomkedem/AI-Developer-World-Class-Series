@@ -183,4 +183,4 @@ except Exception: pass הוא אויב. עדיף לכתוב לוג ולטפל.
 לוגים טובים הם לא רעש, הם מצפן.
 וכשמגיע הבאג הראשון בפרודקשן, הם יהיו הקול השפוי היחיד שיספר לך את האמת.
 **תרשים זרימה של טיפול בשגיאות**
-![alt text](image.png)
+![alt text](/AI-Developer-World-Class-Series/img/image.png)
