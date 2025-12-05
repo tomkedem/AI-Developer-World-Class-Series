@@ -10,7 +10,7 @@ bookCover: "img/cover.png"
 ![book cover](/AI-Developer-World-Class-Series/img/cover.png)
 מאת: תומר קדם  
 
-יוצר וארכיטקט התוכן של  
+יוצר וארכיטקט התוכן של   
 
 AI Developer World Class Series  
 
