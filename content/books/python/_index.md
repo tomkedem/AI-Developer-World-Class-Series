@@ -2,13 +2,12 @@
 title: "פייתון פרקטי למתכנתים לעידן ה-AI"
 weight: 1
 bookCollapseSection: true
-bookCover: "books/python/cover.png"
+bookCover: "AI-Developer-World-Class-Series/img/cover.png"
 ---
 
 # פייתון פרקטי למתכנתים לעידן ה-AI
 
-![כריכת הספר](cover.png)
-
+![book cover](/AI-Developer-World-Class-Series/img/cover.png)
 מאת: תומר קדם  
 
 יוצר וארכיטקט התוכן של  
