@@ -1,10 +1,10 @@
 <nav>
 
   <!-- Series logo (smaller) -->
+  <!-- Series logo (smaller) -->
   <div style="text-align:center; padding: 0.5rem 0;">
-    <img src="{{ "series/logo.png" | relURL }}"
-         alt="Series Logo"
-         style="width: 70px; margin-bottom: 0.5rem;" />
+    <img src="{{ "series/logo.png" | relURL }}" alt="Series Logo" style="width: 70px; margin-bottom: 0.5rem;" />
+    <img src="{{ "img/cover_python.png" | relURL }}" alt="Python Book Cover" style="width: 1px; border-radius: 6px; " />
   </div>
 
   {{ partial "docs/brand" . }}
@@ -12,9 +12,7 @@
 
   <!-- Book cover BELOW search box -->
   <div style="text-align:center; padding: 0.5rem 0 1rem 0;">
-    <img src="{{ "cover_python.png" | relURL }}"
-         alt="Python Book Cover"
-         style="width: 110px; border-radius: 6px;" />
+        <img src="{{ "img/cover_python.png" | relURL }}" alt="Python Book Cover" style="width: 110px; border-radius: 6px;" />
   </div>
 
   {{ partial "docs/inject/menu-before" . }}
