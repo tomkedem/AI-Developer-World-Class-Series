@@ -1,0 +1,40 @@
+<nav>
+
+  <!-- Series logo (smaller) -->
+  <div style="text-align:center; padding: 0.5rem 0;">
+    <img src="{{ "series/logo.png" | relURL }}"
+         alt="Series Logo"
+         style="width: 70px; margin-bottom: 0.5rem;" />
+  </div>
+
+  {{ partial "docs/brand" . }}
+  {{ partial "docs/search" . }}
+
+  <!-- Book cover BELOW search box -->
+  <div style="text-align:center; padding: 0.5rem 0 1rem 0;">
+    <img src="{{ "cover_python.png" | relURL }}"
+         alt="Python Book Cover"
+         style="width: 110px; border-radius: 6px;" />
+  </div>
+
+  {{ partial "docs/inject/menu-before" . }}
+
+  {{ if .Site.Params.BookMenuBundle }}
+    {{ partial "docs/menu-bundle" . }}
+  {{ else }}
+    {{ partial "docs/menu-filetree" . }}
+  {{ end }}
+
+  {{ partial "docs/inject/menu-after" . }}
+</nav>
+
+<script>
+  /* Keep menu position on reload */
+  (function() {
+    var menu = document.querySelector("aside.book-menu nav");
+    addEventListener("beforeunload", function() {
+      localStorage.setItem("menu.scrollTop", menu.scrollTop);
+    });
+    menu.scrollTop = localStorage.getItem("menu.scrollTop");
+  })();
+</script>

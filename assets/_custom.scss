@@ -1,0 +1,38 @@
+/* Force RTL direction for the entire site */
+html {
+  direction: rtl;
+}
+
+/* General page text alignment */
+body, .book-page {
+  text-align: right;
+}
+
+/* Sidebar menu */
+.book-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Headings */
+.book-page h1,
+.book-page h2,
+.book-page h3,
+.book-page h4,
+.book-page h5,
+.book-page h6 {
+  text-align: right;
+}
+
+/* Lists */
+.book-page ul,
+.book-page ol {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Table of contents section */
+.book-toc {
+  direction: rtl;
+  text-align: right;
+}
