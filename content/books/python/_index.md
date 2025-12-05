@@ -3,6 +3,7 @@ title: "פייתון פרקטי למתכנתים לעידן ה-AI"
 weight: 1
 bookCollapseSection: true
 bookCover: "img/cover.png"
+
 ---
 
 # פייתון פרקטי למתכנתים לעידן ה-AI
