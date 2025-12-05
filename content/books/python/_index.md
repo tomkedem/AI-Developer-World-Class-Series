@@ -2,7 +2,7 @@
 title: "פייתון פרקטי למתכנתים לעידן ה-AI"
 weight: 1
 bookCollapseSection: true
-bookCover: "AI-Developer-World-Class-Series/img/cover.png"
+bookCover: "img/cover.png"
 ---
 
 # פייתון פרקטי למתכנתים לעידן ה-AI
