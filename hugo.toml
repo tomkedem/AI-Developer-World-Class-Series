@@ -1,14 +1,24 @@
 baseURL = "https://tomkedem.github.io/AI-Developer-World-Class-Series/"
-languageCode = "he-il"
 title = "AI Developer World Class Series"
 theme = "book"
+
 defaultContentLanguage = "he"
+defaultContentLanguageInSubdir = true
 
 [languages]
+
   [languages.he]
     languageName = "עברית"
-    languageCode = "he"
+    languageCode = "he-il"
+    weight = 1
     languageDirection = "rtl"
+
+  [languages.en]
+    languageName = "English"
+    languageCode = "en-us"
+    weight = 2
+    languageDirection = "ltr"
+
 
 [params]
   BookSection = "books"

@@ -1,0 +1,5 @@
+- id: nav_prev
+  translation: "Previous chapter"
+
+- id: nav_next
+  translation: "Next chapter"

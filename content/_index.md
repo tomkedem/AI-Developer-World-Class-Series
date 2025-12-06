@@ -13,16 +13,16 @@ title: "AI Developer World-Class Series"
 
 ## 📘 פייתון פרקטי למתכנתים לעידן ה-AI
 היכרות מעשית עם פייתון ככלי עבודה בפרויקטי AI.  
-[כניסה לספר](/books/python/)
+[כניסה לספר](/AI-Developer-World-Class-Series/books/python/)
 
 ---
 
 ## 📗 מתמטיקה אינטואיטיבית למתכנתים לעידן ה-AI
 הצגה ידידותית של מושגים מתמטיים מרכזיים שעוזרים להבין מודלים וכלים בעולם הבינה המלאכותית.  
-[כניסה לספר](/books/math-intuitive/)
+[כניסה לספר](/AI-Developer-World-Class-Series/books/math-intuitive/)
 
 ---
 
 ## 📙 מתמטיקה והיגיון הסתברותי למתכנתים בעידן ה-AI  
 ספר שמרכז את מושגי ההסתברות, החשיבה הסטטיסטית והאינטואיציה הנדרשת לעבודה עם מודלי AI.  
-[כניסה לספר](/books/math-probability/)
+[כניסה לספר](/AI-Developer-World-Class-Series/books/math-probability/)
