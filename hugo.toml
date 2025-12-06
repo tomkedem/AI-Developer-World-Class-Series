@@ -5,6 +5,16 @@ theme = "book"
 defaultContentLanguage = "he"
 defaultContentLanguageInSubdir = true
 
+[params]
+  BookSection = "books"
+  BookToC = true
+  BookSearch = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [languages]
 
   [languages.he]
@@ -13,14 +23,63 @@ defaultContentLanguageInSubdir = true
     weight = 1
     languageDirection = "rtl"
 
+    [languages.he.params]
+      BookSection = "books"
+      BookToC = true
+      BookSearch = true
+
+    [languages.he.menu]
+
+      [[languages.he.menu.footer]]
+        name = "זכויות יוצרים"
+        url  = "legal/copyright/"
+        weight = 10
+
+      [[languages.he.menu.footer]]
+        name = "תנאי שימוש"
+        url  = "legal/terms/"
+        weight = 11
+
+      [[languages.he.menu.footer]]
+        name = "מדיניות שימוש בתוכן"
+        url  = "legal/content-policy/"
+        weight = 12
+
+      [[languages.he.menu.footer]]
+        name = "מדיניות פרטיות"
+        url  = "legal/privacy/"
+        weight = 13
+
+
   [languages.en]
     languageName = "English"
     languageCode = "en-us"
     weight = 2
     languageDirection = "ltr"
 
+    [languages.en.params]
+      BookSection = "books"
+      BookToC = true
+      BookSearch = true
 
-[params]
-  BookSection = "books"
-  BookToC = true
-  BookSearch = true
+    [languages.en.menu]
+
+      [[languages.en.menu.footer]]
+        name = "Copyright"
+        url  = "legal/copyright/"
+        weight = 10
+
+      [[languages.en.menu.footer]]
+        name = "Terms of Use"
+        url  = "legal/terms/"
+        weight = 11
+
+      [[languages.en.menu.footer]]
+        name = "Content Policy"
+        url  = "legal/content-policy/"
+        weight = 12
+
+      [[languages.en.menu.footer]]
+        name = "Privacy Policy"
+        url  = "legal/privacy/"
+        weight = 13

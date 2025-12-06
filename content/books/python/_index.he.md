@@ -15,3 +15,4 @@ bookCover: "img/cover_python.png"
 יוצר וארכיטקט התוכן של    AI Developer World Class Series  
 
 גרסה ‎4.6‎ | ‎2025‎
+

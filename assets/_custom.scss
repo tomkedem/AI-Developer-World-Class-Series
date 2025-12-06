@@ -37,4 +37,21 @@ body, .book-page {
   text-align: right;
 }
 
+/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
+.book-page .markdown img[src$="cover_math_intuitive.png"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
+.book-page .markdown img[src$="cover_python.png"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
 
