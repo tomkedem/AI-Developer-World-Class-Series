@@ -18,16 +18,16 @@ The goal is to help you become a developer who understands how to work with mode
 
 The series is built in layers, with each layer adding a concrete, practical skill.
 
-• Working correctly with intelligent models and understanding their limits  
-• Modern Python as a clean and reliable foundation for AI projects  
-• Intuitive math that supports the way all data based models operate  
-• Statistical and probabilistic reasoning for understanding errors and decisions  
-• Fundamentals of machine learning and natural language processing  
-• Designing prompts and connecting models to external tools  
-• Building assistants and agents that perform sequences of actions  
-• Creating knowledge based systems that combine retrieval and generation  
-• Deployment, monitoring and operational control in production environments  
-• Ethics, privacy and responsibility when building AI powered systems  
+- Working correctly with intelligent models and understanding their limits  
+- Modern Python as a clean and reliable foundation for AI projects  
+- Intuitive math that supports the way all data based models operate  
+- Statistical and probabilistic reasoning for understanding errors and decisions  
+- Fundamentals of machine learning and natural language processing  
+- Designing prompts and connecting models to external tools  
+- Building assistants and agents that perform sequences of actions  
+- Creating knowledge based systems that combine retrieval and generation  
+- Deployment, monitoring and operational control in production environments  
+- Ethics, privacy and responsibility when building AI powered systems  
 
 Each stage includes a small hands on project that translates theory into working code,  
 ensuring learning is practical rather than abstract.
@@ -51,18 +51,18 @@ Intelligent models produce impressive results, but they still fail in ways that 
 
 A developer must know:
 
-• when to trust the model  
-• when to intervene  
-• how to design requests that guide the model  
-• how to harden systems so they behave consistently  
+- when to trust the model  
+- when to intervene  
+- how to design requests that guide the model  
+- how to harden systems so they behave consistently  
 
 The series gives developers a strong advantage:
 
-• confidence working with language models  
-• the ability to evaluate results even when they are wrong  
-• the skills needed to integrate models into code and workflows  
-• tools for maintaining responsibility and quality control  
-• a shared language for working with humans and machines together  
+- confidence working with language models  
+- the ability to evaluate results even when they are wrong  
+- the skills needed to integrate models into code and workflows  
+- tools for maintaining responsibility and quality control  
+- a shared language for working with humans and machines together  
 
 This is the foundation needed for any developer who wants to stay relevant in the age of AI.
 
@@ -70,10 +70,10 @@ This is the foundation needed for any developer who wants to stay relevant in th
 
 ## Who the Series Is For
 
-• Developers who want to advance professionally in the AI era  
-• Engineers integrating models into existing systems  
-• Team leads who need clear patterns and shared terminology  
-• Organizations that want to establish AI capabilities responsibly  
+- Developers who want to advance professionally in the AI era  
+- Engineers integrating models into existing systems  
+- Team leads who need clear patterns and shared terminology  
+- Organizations that want to establish AI capabilities responsibly  
 
 No advanced mathematics or ML knowledge is required.  
 If you can write code and you are curious about the future, this path fits you.

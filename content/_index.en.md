@@ -5,7 +5,7 @@ title: "AI Developer World-Class Series"
 # AI Developer World-Class Series
 
 For a full overview of the series – goals, structure and learning path:  
-[Read the Series Introduction](/AI-Developer-World-Class-Series/intro/)
+[Read the Series Introduction](/AI-Developer-World-Class-Series/en/intro/)
 
 In a world where intelligent models can write code, analyze text and perform complex tasks,  
 the role of the developer is changing.  
