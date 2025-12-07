@@ -53,5 +53,27 @@ body, .book-page {
 }
 
 
+/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
+.book-page .markdown img[src$="text_to_vector.png"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
+.book-page .markdown img[src$="Embe.png"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
+.book-page .markdown img[src$="cosine.png"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 

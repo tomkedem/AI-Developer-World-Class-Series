@@ -111,9 +111,6 @@ weight: 10
 זו הסיבה שהשיפוע הוא הכלי המרכזי שמודלים משתמשים בו.
 הוא מסביר גם **לאן** לזוז וגם **כמה** לזוז.
 
-**
-**
-
 **איך זה נראה ביום יום של מודל?**
 
 בכל צעד אימון, המודל בודק:
@@ -147,35 +144,28 @@ weight: 10
 גבוהה בצדדים, נמוכה באמצע.
 
 נניח שהטעות מוגדרת כך:
-
+```py
 import numpy as np
-
 import matplotlib.pyplot as plt
 
-\# פונקציית טעות פשוטה
-
+# Simple error function
 def error(x):
-
-    return (x - 3)\*\*2 + 2
+    return (x - 3)**2 + 2
 
 xs = np.linspace(-2, 8, 200)
-
 ys = error(xs)
 
 plt.plot(xs, ys)
-
-plt.xlabel(\"מיקום על העקומה\")
-
-plt.ylabel(\"טעות\")
-
-plt.title(\"עקומת טעות פשוטה\")
-
+plt.xlabel("Position on the curve")
+plt.ylabel("Error")
+plt.title("Simple error curve")
 plt.grid(True)
-
 plt.show()
 
+```
+
 אם תריץ את הקוד הזה, תראה גרף עם צורה ברורה מאוד:
-הטעות גבוהה בקצוות, ונמוכה בנקודה אחת באמצע -- באזור של
+הטעות גבוהה בקצוות, ונמוכה בנקודה אחת באמצע, באזור של
 x=3.
 זו נקודת המינימום.
 
@@ -199,20 +189,17 @@ x=3.
 **איך מודל היה \"מיישם\" את זה?**
 
 נוסיף קטע קוד קטן שמדמה צעד אחד של תהליך הלמידה:
-
-\# נקודה התחלתית
-
+```py
+# Starting point
 x = -1
 
 learning_rate = 0.1
 
 for step in range(5):
-
-    slope = 2\*(x - 3)   \# השיפוע של הפונקציה
-
-    x = x - learning_rate \* slope
-
-    print(f\"צעד {step+1}: x = {x}\")
+    slope = 2*(x - 3)   # The slope of the function
+    x = x - learning_rate * slope
+    print(f"Step {step + 1}: x = {x}")
+```
 
 מה תראה כשתריץ את זה?
 

@@ -101,49 +101,35 @@ weight: 8
 ערך גבוה (קרוב ל-1) אומר שהמשפטים דומים מאוד במשמעות.
 ערך נמוך (קרוב ל-0 או שלילי) אומר שהמשמעות שונה.
 
-**
-**
-
 **איך זה נראה בקוד?**
 
 נניח שיש לנו שני וקטורים שמייצגים משפטים,
 v1 ו-v2:
-
+```py
 import numpy as np
 
 def cosine_similarity(a, b):
+    # Dot product. Measures how much the two vectors point to the same direction
+    dot = np.dot(a, b)
 
-    \# מכפלה סקלרית - מודדת עד כמה שני הוקטורים \"פונים\" לאותו
-כיוון
+    # Length of each vector. Helps neutralize the effect of their size
+    norm_a = np.linalg.norm(a)
+    norm_b = np.linalg.norm(b)
 
-    dot = np.dot(a, b)
+    # Dividing the dot product by the lengths gives a number between minus one and one
+    # Value close to one means the directions are very similar which hints at similar meaning
+    # Value close to zero means almost no relation in direction
+    # Negative value means opposite directions
+    return dot / (norm_a * norm_b)
 
-    \# אורך של כל וקטור - מאפשר לנטרל את השפעת הגודל שלהם
+# Two vectors with similar meaning
+v1 = np.array([0.2, 0.8, 0.4])
+v2 = np.array([0.25, 0.75, 0.35])
 
-    norm_a = np.linalg.norm(a)
-
-    norm_b = np.linalg.norm(b)
-
-    \# חלוקה של המכפלה הסקלרית באורכים - נותנת מספר בין -1
-ל-1
-
-    \# ערך קרוב ל-1 = כיוון דומה מאוד = משמעות דומה
-
-    \# ערך קרוב ל-0 = כמעט אין קשר בכיוון
-
-    \# ערך שלילי = כיוונים מנוגדים
-
-    return dot / (norm_a \* norm_b)
-
-\# שני וקטורים עם משמעות קרובה
-
-v1 = np.array(\[0.2, 0.8, 0.4\])
-
-v2 = np.array(\[0.25, 0.75, 0.35\])
-
-\# הדפסה של מידת הדמיון הסמנטי ביניהם
-
+# Print their semantic similarity
 print(cosine_similarity(v1, v2))
+
+```
 
 אם תקבל מספר גבוה, נניח 0.93,
 זה אומר שהמשפטים מצביעים על אותו רעיון.
@@ -160,15 +146,13 @@ np.dot(a, b) מחשבת את **המכפלה הסקלרית** בין שני וק�
 התוצאות.
 
 לדוגמה:
-
-a = \[1, 2, 3\]
-
-b = \[4, 5, 6\]
+```py
+a = [1, 2, 3]
+b = [4, 5, 6]
 
 np.dot(a, b)
-
-\# 1\*4 + 2\*5 + 3\*6 = 32
-
+# 1*4 + 2*5 + 3*6 = 32
+```
 המשמעות:
 ככל ששני וקטורים מצביעים בכיוון דומה יותר, הערך של dot
 גדול יותר.
@@ -180,40 +164,36 @@ a.
 זה מספר אחד שמייצג כמה הוקטור "רחוק מהמרכז".
 
 לדוגמה:
-
-v = \[3, 4\]
-
+```py
+v = [3, 4]
 np.linalg.norm(v)
+# sqrt(3*3 + 4*4) = 5
 
-\# sqrt(3\*3 + 4\*4) = 5
+```
 
 המשמעות:
 וקטורים גדולים או קיצוניים יקבלו נורמה גדולה יותר.
 
 **עכשיו הדוגמה של cosine similarity הופכת
 לברורה**
-
+```py
 import numpy as np
 
 def cosine_similarity(a, b):
-
-    dot = np.dot(a, b)         \# כמה הכיוונים שלהם דומים
-
-    norm_a = np.linalg.norm(a) \# אורך של הוקטור הראשון
-
-    norm_b = np.linalg.norm(b) \# אורך של הוקטור השני
-
-    return dot / (norm_a \* norm_b)
-
+    dot = np.dot(a, b)         # How similar their directions are
+    norm_a = np.linalg.norm(a) # Length of the first vector
+    norm_b = np.linalg.norm(b) # Length of the second vector
+    return dot / (norm_a * norm_b)
+```
 וקטורים שמצביעים לאותו כיוון יקבלו ערך קרוב ל 1
 וקטורים בכיוונים שונים יקבלו ערך נמוך.
-
-v1 = np.array(\[0.2, 0.8, 0.4\])
-
-v2 = np.array(\[0.25, 0.75, 0.35\])
+```py
+v1 = np.array([0.2, 0.8, 0.4])
+v2 = np.array([0.25, 0.75, 0.35])
 
 print(cosine_similarity(v1, v2))
 
+```
 -   תוצאה גבוהה, למשל **0.93**, אומרת שהמשפטים דומים מאוד
     במשמעות.
 
@@ -288,9 +268,10 @@ Embedding מייצר לכל פריט מידע, **וקטור**
 
 **כדי להבין את זה בצורה ברורה, נתחיל בהמחשה חזותית.**
 
-![תמונה שמכילה טקסט, צילום מסך, גופן, מספר תוכן בינה מלאכותית גנרטיבית
-עשוי להיות שגוי.](media/image2.png){width="4.454966097987752in"
-height="2.0738615485564305in"}
+
+
+{{< figure src="/AI-Developer-World-Class-Series/img/text_to_vector.png" width="300" alt="text to vector" >}}
+
 באיור זה רואים איך המילה עוברת דרך Embedding ומקבלת
 וקטור.
 
@@ -303,9 +284,10 @@ height="2.0738615485564305in"}
 
 לדוגמה
 מילים כמו חתול, גור וחיה יופיעו באותו אזור של המרחב.
-ומילים כמו דפדפן ענן וצבע יהיו רחוקות מהן לגמרי.
+ומילים כמו חלון ענן וצבע יהיו רחוקות מהן לגמרי.
 
-![](media/image3.png){width="3.90625in" height="2.057292213473316in"}
+
+{{< figure src="/AI-Developer-World-Class-Series/img/Embe.png" width="300" alt="text to vector" >}}
 
 המרחקים פחות חשובים.
 הכיוון הוא מה שמספר למודל מה דומה למה.
@@ -320,8 +302,8 @@ height="2.0738615485564305in"}
 -   אם הזווית רחבה -- רעיון שונה
     האורך כמעט לא משנה, רק הזווית.
 
-![](media/image4.png){width="5.629706911636045in"
-height="2.5000951443569552in"}
+{{< figure src="/AI-Developer-World-Class-Series/img/cosine.png" width="300" alt="text to vector" >}}
+
 
 זו הסיבה שדמיון במרחב Embeddings נקבע לפי הכיוון ולא לפי
 המרחק.

@@ -79,25 +79,21 @@ weight: 12
 על הנתונים.
 
 **קוד בסיסי**
-
+```py
 import numpy as np
 
-\# רשימת מספרים לדוגמה
+# Example list of numbers
+data = np.array([10, 12, 13, 9, 8, 15, 14])
 
-data = np.array(\[10, 12, 13, 9, 8, 15, 14\])
-
-\# ממוצע
-
+# Mean
 mean = np.mean(data)
 
-\# סטיית תקן
-
+# Standard deviation
 std = np.std(data)
 
-print(\"ממוצע:\", mean)
-
-print(\"סטיית תקן:\", std)
-
+print("Mean:", mean)
+print("Standard deviation:", std)
+```
 **מה צריך לראות?**
 
 -   **הממוצע** אומר איפה "מרכז" המספרים.
@@ -110,12 +106,11 @@ print(\"סטיית תקן:\", std)
 **משימה קצרה**
 
 שנה את הרשימה לנתונים "קיצוניים" יותר, למשל:
-
-data = np.array(\[10, 10, 11, 12, 50\])
+```py
+data = np.array([10, 10, 11, 12, 50])
+```
 
 ושים לב איך סטיית התקן "קופצת" בגלל הערך החריג.
-
-[]
 
 ## תרגיל: הסתברות מותנית
 
@@ -128,39 +123,29 @@ data = np.array(\[10, 10, 11, 12, 50\])
 נבנה טבלה פשוטה של אירועים, ואז נחשב את ההסתברות המותנית:
 כמה מתוך האירועים בקבוצה מסוימת מקיימים תנאי נוסף.
 
-**
-**
-
 **קוד בסיסי**
 
 נניח טבלה פשוטה של הודעות:
-
+```py
 import numpy as np
 
-\# [נתונים: \[ספאם, לא ספאם\]]
+# Data format is [spam, not spam]
+with_free = np.array([42, 3])
+without_free = np.array([1158, 797])
 
-with_free = np.array(\[42, 3\])
+total_spam = with_free[0] + without_free[0]
+total_ham = with_free[1] + without_free[1]
 
-without_free = np.array(\[1158, 797\])
+# Conditional probability. How many messages contain free inside spam
+p_free_given_spam = with_free[0] / total_spam
 
-total_spam = with_free\[0\] + without_free\[0\]
+# Conditional probability. How many messages contain free inside non spam
+p_free_given_ham = with_free[1] / total_ham
 
-total_ham = with_free\[1\] + without_free\[1\]
+print("Probability to see free inside spam:", round(p_free_given_spam, 3))
+print("Probability to see free inside non spam:", round(p_free_given_ham, 3))
 
-\# הסתברות מותנית: כמה free בתוך ספאם
-
-p_free_given_spam = with_free\[0\] / total_spam
-
-\# הסתברות מותנית: כמה free בתוך לא ספאם
-
-p_free_given_ham = with_free\[1\] / total_ham
-
-print(\"הסתברות לראות \'free\' בתוך ספאם:\",
-round(p_free_given_spam, 3))
-
-print(\"הסתברות לראות \'free\' בתוך לא
-ספאם:\", round(p_free_given_ham, 3))
-
+```
 **מה צריך לראות?**
 
 -   ההסתברות ל-"free" בתוך ספאם גבוהה
@@ -172,8 +157,6 @@ print(\"הסתברות לראות \'free\' בתוך לא
 
 זוהי ההבנה המרכזית של הסתברות מותנית.
 
-**
-**
 
 **משימה קצרה**
 
@@ -198,52 +181,37 @@ print(\"הסתברות לראות \'free\' בתוך לא
 free,
 באמצעות הטבלה הפשוטה.
 
-**
-**
-
 **קוד בסיסי**
 
 נשתמש באותה טבלת שכיחויות:
-
+```py
 import numpy as np
 
-\# [טבלה: \[ספאם, לא ספאם\]]
+# Table format is [spam, not spam]
+with_free = np.array([42, 3])
+without_free = np.array([1158, 797])
 
-with_free = np.array(\[42, 3\])
-
-without_free = np.array(\[1158, 797\])
-
-\# סכומים כלליים
-
-total_spam = with_free\[0\] + without_free\[0\]
-
-total_ham = with_free\[1\] + without_free\[1\]
-
+# Totals
+total_spam = with_free[0] + without_free[0]
+total_ham = with_free[1] + without_free[1]
 total_all = total_spam + total_ham
 
-\# הסתברות בסיסית לספאם
-
+# Basic probability of spam
 p_spam = total_spam / total_all
 
-\# הסתברות לראות free בתוך כל קטגוריה
+# Probability to see free inside each category
+p_free_given_spam = with_free[0] / total_spam
+p_free_given_ham = with_free[1] / total_ham
 
-p_free_given_spam = with_free\[0\] / total_spam
+# Probability to see free in general
+p_free = (with_free[0] + with_free[1]) / total_all
 
-p_free_given_ham = with_free\[1\] / total_ham
+# Bayes rule. Probability of spam given free
+p_spam_given_free = (p_free_given_spam * p_spam) / p_free
 
-\# הסתברות לראות free בכלל
+print("Probability of spam given free:", round(p_spam_given_free, 3))
 
-p_free = (with_free\[0\] + with_free\[1\]) / total_all
-
-\# בייס: ספאם בהינתן free
-
-p_spam_given_free = (p_free_given_spam \* p_spam) / p_free
-
-print(\"הסתברות שספאם בהינתן free:\",
-round(p_spam_given_free, 3))
-
-**
-**
+```
 
 **מה צריך לראות?**
 
@@ -279,26 +247,23 @@ round(p_spam_given_free, 3))
 ונראה איך אורך הוקטור משתנה בהתאם לערכים שלו.
 
 **קוד בסיסי**
-
+```py
 import numpy as np
 
-\# וקטור פשוט
+# Simple vector
+v1 = np.array([3, 4])
 
-v1 = np.array(\[3, 4\])
-
-\# נורמה (אורך)
-
+# Norm (length)
 norm_v1 = np.linalg.norm(v1)
 
-print(\"נורמה של v1:\", norm_v1)
+print("Norm of v1:", norm_v1)
 
-\# וקטור ארוך יותר
-
-v2 = np.array(\[1, 2, 3, 4, 5\])
-
+# Longer vector
+v2 = np.array([1, 2, 3, 4, 5])
 norm_v2 = np.linalg.norm(v2)
 
-print(\"נורמה של v2:\", round(norm_v2, 3))
+print("Norm of v2:", round(norm_v2, 3))
+```
 
 **מה צריך לראות?**
 
@@ -319,15 +284,13 @@ print(\"נורמה של v2:\", round(norm_v2, 3))
 חשב את הנורמות שלהם והשווה ביניהם.
 
 לדוגמה:
-
-v_small = np.array(\[0.1, 0.2, 0.3\])
-
-v_jump = np.array(\[0.1, 5.0, 0.2\])
+```py
+v_small = np.array([0.1, 0.2, 0.3])
+v_jump = np.array([0.1, 5.0, 0.2])
 
 print(np.linalg.norm(v_small))
-
 print(np.linalg.norm(v_jump))
-
+```
 שים לב איך שינוי קטן בערך אחד יכול להגדיל מאוד את האורך של
 הוקטור.
 
@@ -346,30 +309,23 @@ print(np.linalg.norm(v_jump))
 ומה קורה כשהם שונים לגמרי.
 
 **דוגמת קוד**
-
+```py
 import numpy as np
 
 def cosine_similarity(a, b):
+    dot = np.dot(a, b)
+    norm_a = np.linalg.norm(a)
+    norm_b = np.linalg.norm(b)
+    return dot / (norm_a * norm_b)
 
-    dot = np.dot(a, b)
+v1 = np.array([1, 2, 3])
+v2 = np.array([1, 2, 3])
+v3 = np.array([-3, 0, 1])
 
-    norm_a = np.linalg.norm(a)
+print("Similarity v1 and v2:", round(cosine_similarity(v1, v2), 3))
+print("Similarity v1 and v3:", round(cosine_similarity(v1, v3), 3))
 
-    norm_b = np.linalg.norm(b)
-
-    return dot / (norm_a \* norm_b)
-
-v1 = np.array(\[1, 2, 3\])
-
-v2 = np.array(\[1, 2, 3\])
-
-v3 = np.array(\[-3, 0, 1\])
-
-print(\"דמיון v1 ו-v2:\",
-round(cosine_similarity(v1, v2), 3))
-
-print(\"דמיון v1 ו-v3:\",
-round(cosine_similarity(v1, v3), 3))
+```
 
 **מה צריך לראות?**
 
@@ -387,11 +343,10 @@ round(cosine_similarity(v1, v3), 3))
 
 נסה ליצור שני וקטורים שונים לחלוטין במרחק,
 אבל בעלי יחס בין רכיבים דומה:
-
-a = np.array(\[1, 2, 3\])
-
-b = np.array(\[10, 20, 30\])
-
+```py
+a = np.array([1, 2, 3])
+b = np.array([10, 20, 30])
+```
 בדוק את הדמיון ביניהם.
 תראה שהדמיון יהיה כמעט 1, כי הכיוון זהה למרות שהגודל שונה
 לגמרי.
@@ -413,39 +368,32 @@ b = np.array(\[10, 20, 30\])
 ונבצע צעד אחד של Gradient Descent.
 
 **דוגמת קוד**
-
+```py
 import numpy as np
 
-\# פונקציית טעות פשוטה
-
+# Simple error function
 def error(x):
+    return (x - 3)**2
 
-    return (x - 3)\*\*2
-
-\# השיפוע של פונקציית הטעות
-
+# The slope of the error function
 def slope(x):
+    return 2*(x - 3)
 
-    return 2\*(x - 3)
-
-\# נקודת התחלה
-
+# Starting point
 x = -1
 
 learning_rate = 0.1
 
-print(\"לפני הצעד:\")
+print("Before the step:")
+print("x =", x, "  error =", error(x))
 
-print(\"x =\", x, \"  error =\", error(x))
+# One step of gradient descent
+x_new = x - learning_rate * slope(x)
 
-\# צעד אחד של Gradient Descent
+print("After the step:")
+print("x =", round(x_new, 4), "  error =", round(error(x_new), 4))
 
-x_new = x - learning_rate \* slope(x)
-
-print(\"אחרי הצעד:\")
-
-print(\"x =\", round(x_new, 4), \"  error =\", round(error(x_new), 4))
-
+```
 **מה צריך לראות?**
 
 -   הפונקציה מוגדרת כך שהמינימום שלה הוא ב-x = 3
@@ -465,9 +413,9 @@ print(\"x =\", round(x_new, 4), \"  error =\", round(error(x_new), 4))
 **משימה קצרה**
 
 שחק עם קצב הלמידה:
-
+```py
 learning_rate = 0.8
-
+```
 ותראה מה קורה.
 האם x קופץ רחוק מדי?
 האם הוא עובר את המינימום?

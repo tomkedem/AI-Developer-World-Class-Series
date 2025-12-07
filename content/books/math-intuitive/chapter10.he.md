@@ -1,8 +1,8 @@
 ---
-title: "פרק 10 - Gradient Descent [] - הלמידה עצמה"
+title: "פרק 10 - Gradient Descent - הלמידה עצמה"
 weight: 11
 ---
-# פרק 10 -- Gradient Descent [] --הלמידה עצמה
+# פרק 10 -- Gradient Descent - הלמידה עצמה
 
 ## רעיון ירידת המפל
 
@@ -201,41 +201,33 @@ Gradient Descent לא מחפש פתרון מושלם.
 למה שקורה באימון מודלים גדולים.
 
 נשתמש בפונקציית טעות מהסוג שכבר ראינו:
-
+```py
 def error(x):
-
-    return (x - 3)\*\*2 + 2
+    return (x - 3)**2 + 2
+```
 
 הפונקציה הזו מגיעה למינימום כשה-x שווה 3.
 
 עכשיו נכתוב Gradient Descent בסיסי:
-
+```py
 import numpy as np
 
 def error(x):
-
-    return (x - 3)\*\*2 + 2
+    return (x - 3)**2 + 2
 
 def error_slope(x):
+    # The slope of the function
+    return 2*(x - 3)
 
-    \# השיפוע של הפונקציה
-
-    return 2\*(x - 3)
-
-x = -1        # נקודת התחלה רחוקה מהמינימום
-
+x = -1        # Starting point far from the minimum
 learning_rate = 0.1
 
-print(\"צעדים:\")
-
+print("Steps:")
 for step in range(10):
-
-    slope = error_slope(x)
-
-    x = x - learning_rate \* slope
-
-    print(step + 1, \"=\> x =\", round(x, 4), \" error =\",
-round(error(x), 4))
+    slope = error_slope(x)
+    x = x - learning_rate * slope
+    print(step + 1, "=> x =", round(x, 4), " error =", round(error(x), 4))
+```
 
 **מה רואים כשמריצים את זה?**
 
