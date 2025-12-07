@@ -5,6 +5,8 @@ bookCollapseSection: true
 bookCover: "img/cover_python.png"
 
 ---
+זהו חלק מסדרת AI Developer World-Class Series.  
+לקריאה על מבנה הסדרה: [מבוא לסדרה](../intro/)
 
 # פייתון פרקטי למתכנתים לעידן ה-AI
 

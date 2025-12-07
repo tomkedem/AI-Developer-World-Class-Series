@@ -4,6 +4,10 @@ title: "AI Developer World-Class Series"
 
 # AI Developer World-Class Series
 
+למידע מלא על מבנה הסדרה והמטרות שלה:
+[מבוא לסדרה](/AI-Developer-World-Class-Series/intro/)
+
+
 בעולם שבו מודלים חכמים יודעים לכתוב קוד, לנתח טקסט ולבצע פעולות מורכבות,  
 התפקיד של המפתח משתנה.  
 לא נעלם – משתנה.
