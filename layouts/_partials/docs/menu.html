@@ -1,38 +1,63 @@
 <nav>
 
-  <!-- Series logo (smaller) -->
-  <!-- Series logo (smaller) -->
+  <!-- Series logo (small) -->
   <div style="text-align:center; padding: 0.5rem 0;">
-    <img src="{{ "series/logo.png" | relURL }}" alt="Series Logo" style="width: 70px; margin-bottom: 0.5rem;" />
-    <img src="{{ "img/cover_python.png" | relURL }}" alt="Python Book Cover" style="width: 1px; border-radius: 6px; " />
+    <img src="{{ "series/logo.png" | relURL }}" 
+         alt="Series Logo" 
+         style="width: 70px; margin-bottom: 0.5rem;" />
+
+    <!-- Invisible image placeholder (kept as requested) -->
+    <img src="{{ "img/cover_python.png" | relURL }}" 
+         alt="Python Book Cover" 
+         style="width: 1px; border-radius: 6px;" />
   </div>
 
+  <!-- Brand / site title -->
   {{ partial "docs/brand" . }}
+
+  <!-- Search bar -->
   {{ partial "docs/search" . }}
 
-  <!-- Book cover BELOW search box -->
-  <div style="text-align:center; padding: 0.5rem 0 1rem 0;">
-        <img src="{{ "img/cover_python.png" | relURL }}" alt="Python Book Cover" style="width: 110px; border-radius: 6px;" />
+  <!-- Language selector (desktop + mobile) -->
+  <div class="book-languages" style="padding: 0.5rem 0; text-align:center;">
+    {{ partial "docs/languages" . }}
   </div>
 
+  <!-- Book cover below search box -->
+  <div style="text-align:center; padding: 0.5rem 0 1rem 0;">
+    <img src="{{ "img/cover_python.png" | relURL }}" 
+         alt="Python Book Cover" 
+         style="width: 110px; border-radius: 6px;" />
+  </div>
+
+  <!-- Allow theme/extensions to inject items before menu -->
   {{ partial "docs/inject/menu-before" . }}
 
+  <!-- Main navigation menu (filetree or bundled) -->
   {{ if .Site.Params.BookMenuBundle }}
     {{ partial "docs/menu-bundle" . }}
   {{ else }}
     {{ partial "docs/menu-filetree" . }}
   {{ end }}
 
+  <!-- Allow theme/extensions to inject items after menu -->
   {{ partial "docs/inject/menu-after" . }}
+
 </nav>
 
 <script>
-  /* Keep menu position on reload */
+  /* Preserve sidebar scroll position on reload */
   (function() {
     var menu = document.querySelector("aside.book-menu nav");
+    if (!menu) return;
+
     addEventListener("beforeunload", function() {
       localStorage.setItem("menu.scrollTop", menu.scrollTop);
     });
-    menu.scrollTop = localStorage.getItem("menu.scrollTop");
+
+    var saved = localStorage.getItem("menu.scrollTop");
+    if (saved !== null) {
+      menu.scrollTop = saved;
+    }
   })();
 </script>

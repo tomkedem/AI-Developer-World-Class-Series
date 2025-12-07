@@ -1,0 +1,45 @@
+{{/* Custom prev/next navigation with language-aware layout */}}
+
+{{ $prev := .PrevInSection }}
+{{ $next := .NextInSection }}
+
+{{ if or $prev $next }}
+
+  {{ if eq .Site.Language.LanguageDirection "rtl" }}
+    {{/* Hebrew / RTL: previous on the right, next on the left */}}
+    <div class="flex justify-between book-prev-next" dir="rtl">
+
+      {{ with $prev }}
+        <a href="{{ .RelPermalink }}" class="flex align-center book-prev">
+          <span>← {{ .Title }}</span>
+        </a>
+      {{ end }}
+
+      {{ with $next }}
+        <a href="{{ .RelPermalink }}" class="flex align-center book-next">
+          <span>{{ .Title }} →</span>
+        </a>
+      {{ end }}
+
+    </div>
+
+  {{ else }}
+    {{/* English / LTR: previous on the left, next on the right */}}
+    <div class="flex justify-between book-prev-next" dir="ltr">
+
+      {{ with $prev }}
+        <a href="{{ .RelPermalink }}" class="flex align-center book-prev">
+          <span>← {{ .Title }}</span>
+        </a>
+      {{ end }}
+
+      {{ with $next }}
+        <a href="{{ .RelPermalink }}" class="flex align-center book-next">
+          <span>{{ .Title }} →</span>
+        </a>
+      {{ end }}
+
+    </div>
+  {{ end }}
+
+{{ end }}

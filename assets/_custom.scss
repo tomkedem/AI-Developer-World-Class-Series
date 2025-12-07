@@ -1,20 +1,88 @@
-/* Force RTL direction for the entire site */
-html {
+// RTL support for Hebrew pages
+html[lang="he"] {
   direction: rtl;
 }
 
-/* General page text alignment */
-body, .book-page {
+html[lang="he"] body,
+html[lang="he"] .book-page,
+html[lang="he"] .markdown {
   text-align: right;
 }
 
-/* Sidebar menu */
-.book-menu {
+html[lang="he"] .book-menu {
   direction: rtl;
   text-align: right;
 }
 
-/* Headings */
+/* Hebrew headings alignment */
+html[lang="he"] .book-page h1,
+html[lang="he"] .book-page h2,
+html[lang="he"] .book-page h3,
+html[lang="he"] .book-page h4,
+html[lang="he"] .book-page h5,
+html[lang="he"] .book-page h6 {
+  text-align: right;
+}
+
+/* Hebrew lists */
+html[lang="he"] .book-page ul,
+html[lang="he"] .book-page ol {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Hebrew table of contents */
+html[lang="he"] .book-toc {
+  direction: rtl;
+  text-align: right;
+}
+
+// LTR support for English pages
+html[lang="en"] {
+  direction: ltr;
+}
+
+/* Basic English alignment */
+html[lang="en"] body,
+html[lang="en"] .book-page,
+html[lang="en"] .markdown {
+  text-align: left;
+}
+
+/* English lists */
+html[lang="en"] .markdown ul,
+html[lang="en"] .markdown ol {
+  direction: ltr;
+  text-align: left;
+  padding-left: 1.2rem;
+  padding-right: 0;
+}
+
+html[lang="en"] .markdown li {
+  direction: ltr;
+  text-align: left;
+}
+
+/* Strong LTR enforcement for all English content */
+html[lang="en"] .markdown,
+html[lang="en"] .markdown p,
+html[lang="en"] .markdown h1,
+html[lang="en"] .markdown h2,
+html[lang="en"] .markdown h3,
+html[lang="en"] .markdown h4,
+html[lang="en"] .markdown h5,
+html[lang="en"] .markdown h6,
+html[lang="en"] .book-page {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Ensure paragraphs in English behave normally */
+html[lang="en"] .markdown p {
+  white-space: normal !important;
+}
+
+/* Default heading alignment (overridden in English rules above) */
 .book-page h1,
 .book-page h2,
 .book-page h3,
@@ -24,56 +92,38 @@ body, .book-page {
   text-align: right;
 }
 
-/* Lists */
+/* Default list alignment (overridden for English above) */
 .book-page ul,
 .book-page ol {
   direction: rtl;
   text-align: right;
 }
 
-/* Table of contents section */
+/* Default table of contents alignment */
 .book-toc {
   direction: rtl;
   text-align: right;
 }
 
-/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
-.book-page .markdown img[src$="cover_math_intuitive.png"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
-.book-page .markdown img[src$="cover_python.png"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
-.book-page .markdown img[src$="text_to_vector.png"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
-.book-page .markdown img[src$="Embe.png"] {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* למרכז את תמונת הכריכה בלבד לפי שם הקובץ */
+/* Center specific cover images by filename */
+.book-page .markdown img[src$="cover_math_intuitive.png"],
+.book-page .markdown img[src$="cover_python.png"],
+.book-page .markdown img[src$="text_to_vector.png"],
+.book-page .markdown img[src$="Embe.png"],
 .book-page .markdown img[src$="cosine.png"] {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* Prev / Next navigation: keep it LTR even on Hebrew pages */
+html[lang="he"] .book-footer .flex.justify-between {
+  direction: ltr;
+  text-align: left;
+}
 
-
+/* אבל שהטקסט עצמו יישאר מיושר לצד הימני של המסך */
+html[lang="he"] .book-footer .flex.justify-between a {
+  direction: rtl;
+}
 
