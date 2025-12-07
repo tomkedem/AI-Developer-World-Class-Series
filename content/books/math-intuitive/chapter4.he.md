@@ -55,8 +55,6 @@ weight: 5
 אין פה נוסחה.
 יש הקשר.
 
-**
-**
 
 **למה זה כל כך חשוב?**
 
@@ -125,21 +123,17 @@ weight: 5
 סרקנו מיילים וספרנו כמה פעמים מופיעה המילה
 "free".
 זה מה שקיבלנו:
+מופע המילה "free" | ספאם | לא ספאם
+--- | --- | ---
+מופיעה | 42 | 3
+לא מופיעה | 1158 | 797
 
-  ------------------------------------------------------------------------------
-  מופע המילה \"free\"       ספאם   לא
-                                                             ספאם
-  -------------------------------------- ------------------- -------------------
-  מופיעה                    42                  3
-
-  לא מופיעה                 1158                797
-  ------------------------------------------------------------------------------
 
 זו טבלה קטנה, אבל היא מספרת סיפור גדול.
 
 **איך קוראים את הטבלה?**
 
-כש free מופיעה:
+כש  free  מופיעה:
 
 -   42 מקרים היו ספאם
 
@@ -149,7 +143,7 @@ weight: 5
 **כשfree בפנים -- הקונטקסט מוטה חזק לכיוון
 ספאם.**
 
-כשfree לא מופיעה:
+כש free לא מופיעה:
 
 -   1158 היו ספאם
 
@@ -168,8 +162,8 @@ weight: 5
 
 **מה בייס בעצם שואל?**
 
-הוא מסתכל על הטבלה ושואל: []
-בהינתן שאני רואה free []
+הוא מסתכל על הטבלה ושואל: 
+בהינתן שאני רואה free 
 
 **איזה תרחיש הופיע יותר פעמים?**
 
@@ -277,58 +271,42 @@ weight: 5
 רגילות.
 
 הטבלה שלנו נראית כך:
+מופע המילה "free" | ספאם | לא ספאם
+--- | --- | ---
+מופיעה | 42 | 3
+לא מופיעה | 1158 | 797
 
-  ------------------------------------------------------------------------------
-  מופע המילה \"free\"       ספאם   לא
-                                                             ספאם
-  -------------------------------------- ------------------- -------------------
-  מופיעה                    42                  3
-
-  לא מופיעה                 1158                797
-  ------------------------------------------------------------------------------
 
 בוא נתרגם את הטבלה לפייתון ונראה מה המודל היה \"מרגיש\" כשהוא מקבל
 הודעה עם free.
-
+```py
 import numpy as np
 
-\# טבלת שכיחויות
-
+# Frequency table
 spam_with_free = 42
-
 ham_with_free = 3
 
 spam_without_free = 1158
-
 ham_without_free = 797
 
-\# סך הכל הודעות בכל קטגוריה
-
+# Total messages per category
 total_spam = spam_with_free + spam_without_free
-
 total_ham = ham_with_free + ham_without_free
 
-\# הסתברויות בסיסיות
-
+# Basic probabilities
 p_spam = total_spam / (total_spam + total_ham)
-
 p_ham = total_ham / (total_spam + total_ham)
 
-\# הסתברות מותנית לפי תדירות
-
+# Conditional probabilities
 p_free_given_spam = spam_with_free / total_spam
-
 p_free_given_ham = ham_with_free / total_ham
 
-print(\"הסתברות בסיסית לספאם:\", round(p_spam, 3))
+print("Basic probability of spam:", round(p_spam, 3))
+print("Basic probability of normal message:", round(p_ham, 3))
 
-print(\"הסתברות בסיסית להודעה רגילה:\", round(p_ham, 3))
-
-print(\"הסתברות לראות free בתוך ספאם:\",
-round(p_free_given_spam, 3))
-
-print(\"הסתברות לראות free בהודעות רגילות:\",
-round(p_free_given_ham, 3))
+print("Probability to see the word free inside spam:", round(p_free_given_spam, 3))
+print("Probability to see the word free in normal messages:", round(p_free_given_ham, 3))
+```
 
 מה קורה כאן בפועל?
 
