@@ -6,6 +6,18 @@
   {{ partial "docs/html-head" . }}
   {{ partial "docs/inject/head" . }}
 </head>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+</script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 <body
   {{ if eq .Lang "he" }}dir="rtl"{{ else }}dir="ltr"{{ end }}

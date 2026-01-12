@@ -9,7 +9,8 @@ defaultContentLanguageInSubdir = true
   BookSection = "books"
   BookToC = true
   BookSearch = true
-
+  math = true
+  
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
