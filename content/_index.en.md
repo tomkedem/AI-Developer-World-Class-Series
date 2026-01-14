@@ -30,6 +30,16 @@ and how to build workflows where a developer and an AI agent work together effec
 
 ---
 
+## 📓 The Digital Work Manager for Developers  
+### Mastering Code Agents in the AI Era
+A practical, experience-based guide for developers who already work with Code Agents.  
+This book focuses on control, responsibility and professional judgment:  
+how to manage autonomous agents, define boundaries, validate results  
+and stay in charge of real-world development work.  
+[Enter Book](/AI-Developer-World-Class-Series/books/digital-work-manager/)
+
+---
+
 ## 📘 Practical Python for AI Developers
 A hands-on introduction to Python as a core tool in AI projects.  
 [Enter Book](/AI-Developer-World-Class-Series/books/python/)

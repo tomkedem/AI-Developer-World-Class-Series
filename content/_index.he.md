@@ -30,6 +30,16 @@ title: "AI Developer World-Class Series"
 
 ---
 
+## 📓 מנהל העבודה הדיגיטלי למתכנתים  
+### שליטה בעבודה עם Code Agents בעידן ה-AI
+ספר עבודה מעשי למתכנתים שכבר עובדים עם סוכני קוד בפועל.  
+הספר עוסק בשליטה, אחריות ושיפוט מקצועי:  
+איך לנהל סוכנים אוטונומיים, להגדיר גבולות, לבדוק תוצאות  
+ולהישאר גורם אחראי בעבודה יומיומית עם AI.  
+[כניסה לספר](/AI-Developer-World-Class-Series/books/digital-work-manager/)
+
+---
+
 ## 📘 פייתון פרקטי למתכנתים לעידן ה-AI
 היכרות מעשית עם פייתון ככלי עבודה בפרויקטי AI.  
 [כניסה לספר](/AI-Developer-World-Class-Series/books/python/)
