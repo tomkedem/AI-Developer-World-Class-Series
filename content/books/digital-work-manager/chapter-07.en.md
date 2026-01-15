@@ -1,6 +1,6 @@
 ---
 title: "Chapter 7 - Checkpoints, Git, and Control of the Process"
-weight: 8
+weight: 9
 ---
 
 ## **Chapter 7 - Checkpoints, Git, and Control of the Process**

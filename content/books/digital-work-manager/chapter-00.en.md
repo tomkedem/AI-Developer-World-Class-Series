@@ -1,6 +1,6 @@
 ---
 title: "Opening Chapter - What Has Changed in Software Development"
-weight: 1
+weight: 2
 ---
 
 ## **Opening Chapter - What Has Changed in Software Development**

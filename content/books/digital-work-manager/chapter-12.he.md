@@ -1,6 +1,6 @@
 ---
 title: "פרק 12 - Anti Patterns בעבודה עם Code Agents"
-weight: 13
+weight: 14
 ---
 
 ## **פרק 12 - Anti Patterns בעבודה עם Code Agents**

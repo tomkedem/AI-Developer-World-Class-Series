@@ -1,6 +1,6 @@
 ---
 title: "פרק 7 - Checkpoints, Git ושליטה בתהליך"
-weight: 8
+weight: 9
 ---
 ## **פרק 7 Checkpoints, Git ושליטה בתהליך**
 ### למה Git הוא לא רק Version Control אלא בלם בטיחות

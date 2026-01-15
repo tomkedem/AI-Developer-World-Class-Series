@@ -1,6 +1,6 @@
 ---
 title: "Chapter 9 - Performance, Context, and Cost"
-weight: 10
+weight: 11
 ---
 
 ## **Chapter 9 - Performance, Context, and Cost**

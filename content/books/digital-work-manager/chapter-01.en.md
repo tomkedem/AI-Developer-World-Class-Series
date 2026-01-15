@@ -1,6 +1,6 @@
 ---
 title: "Chapter 1 - The Shift from Chat to Code Agent"
-weight: 2
+weight: 3
 ---
 
 ## **Chapter 1 - The Shift from Chat to Code Agent**

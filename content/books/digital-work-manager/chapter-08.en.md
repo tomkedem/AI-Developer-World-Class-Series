@@ -1,6 +1,6 @@
 ---
 title: "Chapter 8 - Building an End-to-End Feature with an Agent"
-weight: 9
+weight: 10
 ---
 
 ## **Chapter 8 - Building an End-to-End Feature with an Agent**

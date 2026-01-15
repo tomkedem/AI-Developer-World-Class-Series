@@ -1,6 +1,6 @@
 ---
 title: "Chapter 3 - Breaking Down Problems and Defining Tasks Correctly"
-weight: 4
+weight: 5
 ---
 
 ## **Chapter 3 - Breaking Down Problems and Defining Tasks Correctly**

@@ -1,6 +1,6 @@
 ---
 title: "Chapter 10 - Human Judgment and When to Intervene"
-weight: 11
+weight: 12
 ---
 
 ## **Chapter 10 - Human Judgment and When to Intervene**

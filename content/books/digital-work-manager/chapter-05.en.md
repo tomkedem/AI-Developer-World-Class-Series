@@ -1,6 +1,6 @@
 ---
 title: "Chapter 5 - Agent Failures and Repeating Error Patterns"
-weight: 6
+weight: 7
 ---
 
 ## **Chapter 5 - Agent Failures and Repeating Error Patterns**

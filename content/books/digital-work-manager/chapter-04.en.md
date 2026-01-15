@@ -1,6 +1,6 @@
 ---
 title: "Chapter 4 - Persistent Instructions and Working Policy"
-weight: 5
+weight: 6
 ---
 
 ## **Chapter 4 - Persistent Instructions and Working Policy**

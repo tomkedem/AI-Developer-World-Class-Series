@@ -1,6 +1,6 @@
 ---
 title: "Chapter 2 - Boundaries, Responsibility, and Controlled Damage"
-weight: 3
+weight: 4
 ---
 
 ## **Chapter 2 - Boundaries, Responsibility, and Controlled Damage**

@@ -1,7 +1,7 @@
 ---
 
 title: "פרק 6 -  Iterative Debugging ודיאלוג עם המערכת"
-weight: 7
+weight: 8
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Chapter 6 - Iterative Debugging and Dialogue with the System"
-weight: 7
+weight: 8
 ---
 
 ## **Chapter 6 - Iterative Debugging and Dialogue with the System**

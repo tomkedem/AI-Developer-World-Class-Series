@@ -1,404 +1,250 @@
 ---
-title: "פרק 11 - עבודה בסביבה אמיתית"
-weight: 12
+title: "Chapter 11 - Working in a Real Environment"
+weight: 13
 ---
 
-## **פרק 11 - עבודה בסביבה אמיתית**
-### קוד legacy
-רוב המערכות האמיתיות לא נכתבו אתמול.  
+## **Chapter 11 - Working in a Real Environment**
 
+### Legacy Code
 
-הן גדלו שכבה על שכבה, עם החלטות שעשו הגיון בזמנן,  
+Most real systems were not written yesterday.
 
+They grew layer by layer, with decisions that made sense at the time,
 
-ועם קוד שאף אחד כבר לא זוכר למה הוא נראה כמו שהוא נראה.  
+and with code that no one remembers why it looks the way it does.
 
+That is legacy code.
 
+Not necessarily bad code.
 
-זה קוד legacy.  
+Veteran code.
 
+A code agent does not distinguish between new and old.
 
-לא בהכרח קוד גרוע.  
+If you do not tell it otherwise,
 
+it will treat legacy code like any other code:
 
-קוד ותיק.  
+something that can be improved, simplified, or “cleaned up”.
 
+And that is exactly where the danger lies.
 
+In legacy code, a small change can break behavior that no one can explain anymore,
 
-סוכן קוד לא מבדיל בין חדש לישן.  
+but that someone still depends on.
 
+A developer who directs the work does not let the agent “tidy up” legacy code.
 
-אם לא אומרים לו אחרת,  
+They first ask for understanding.
 
+What does this code do today.
 
-הוא יתייחס לקוד legacy כמו לכל קוד אחר:  
+Where does it touch the system.
 
+And which changes are considered safe versus those that require special caution.
 
-משהו שאפשר לשפר, לפשט, או “לנקות”.  
+Sometimes the conclusion is not to touch it at all.
 
+Sometimes only to wrap it with tests.
 
+And sometimes to make a very small, very measured change.
 
-ופה בדיוק הסכנה.  
+The principle is simple:
 
+with legacy code, you do not start with improvement,
 
+you start with respect.
 
-בקוד legacy, שינוי קטן יכול לשבור התנהגות שאף אחד כבר לא יודע להסביר,  
+### Broken Tests
 
+Broken tests are constant noise in real environments.
 
-אבל מישהו עדיין תלוי בה.  
+Sometimes they have been broken for months.
 
+Sometimes they failed because of a completely different change.
 
+And sometimes no one is even sure they are still relevant.
 
-מתכנת שמכוון עבודה לא נותן לסוכן “לעשות סדר” בקוד legacy.  
+When a code agent encounters broken tests, it tries to “fix” them.
 
+Adjust the code.
 
-הוא קודם מבקש הבנה.  
+Update expectations.
 
+Or simply work around them.
 
+But a broken test is not necessarily a code problem.
 
-מה התפקיד של הקוד הזה היום.  
+Sometimes it is evidence that the system changed,
 
+and the tests did not evolve with it.
 
-איפה הוא נוגע במערכת.  
+A developer who directs the work does not let the agent automatically fix tests.
 
+They first ask:
 
-ואיזה שינוי נחשב בטוח לעומת כזה שמצריך זהירות מיוחדת.  
+- what was this test trying to protect  
+- is the behavior it checks still desired  
+- and is its failure a sign of a real problem or just old debt  
 
+Only after answering these questions
 
+does it make sense to decide whether to fix, update, or delete it.
 
-לפעמים המסקנה היא לא לגעת בכלל.  
+Broken tests are not an obstacle.
 
+They are an opportunity to understand the gap between how the system is supposed to work
 
-לפעמים רק להקיף בבדיקות.  
+and how it actually works today.
 
+### CI That Fails
 
-ולפעמים לעשות שינוי קטן ומדוד מאוד.  
+CI systems run automated checks on every code change.
 
+Their goal is simple: verify that the system still works after a change.
 
+In an ideal system, a red CI means something is truly broken.
 
-העיקרון פשוט:  
+In a real system, that is not always the case.
 
+Sometimes CI is broken because of an old change.
 
-בקוד legacy לא מתחילים בשיפור,  
+Sometimes because tests were never updated.
 
+And sometimes simply because no one dealt with it in time.
 
-מתחילים בכבוד.  
+When a code agent encounters a failing CI,
 
+it tends to see it as a problem that must be fixed immediately.
 
+Fix tests.
 
-### טסטים שבורים
+Update configuration.
 
-טסטים שבורים הם רעש קבוע בסביבות אמיתיות.  
+Or “clean things up” until everything turns green.
 
+This is where you need to stop.
 
-לפעמים הם שבורים כבר חודשים.  
+A failing CI is not necessarily part of the task.
 
+Sometimes it is just background noise.
 
-לפעמים הם נכשלו בגלל שינוי אחר לגמרי.  
+A developer who directs the work does not let the agent chase green at all costs.
 
+They first define:
 
-ולפעמים אף אחד לא בטוח אם הם עדיין רלוונטיים.  
+- which tests are relevant to the current change  
+- which failures truly block progress  
+- and which can be left for separate work  
 
+CI is an important tool,
 
+but it also needs to be managed, not just obeyed.
 
-כשסוכן קוד פוגש טסטים שבורים, הוא מנסה “לתקן”.  
+### Messy Projects
 
+Not every project is organized like the books suggest.
 
-להתאים את הקוד.  
+In reality, most are not.
 
+Folders without a clear logic.
 
-לעדכן ציפיות.  
+Files with overly generic names.
 
+Code that handles multiple responsibilities at once.
 
-או פשוט לעקוף.  
+This is not unusual.
 
+It is everyday life.
 
+When a code agent enters a messy project,
 
-אבל טסט שבור הוא לא בהכרח בעיה בקוד.  
+it looks for order.
 
+It tries to organize, unify, “clean”.
 
-לפעמים הוא עדות לכך שהמערכת השתנתה,  
+But cleanup without understanding is a recipe for trouble.
 
+In a messy project, external order does not always reflect internal logic.
 
-והבדיקות לא התעדכנו יחד איתה.  
+Things that look accidental are often deeply tied to business logic.
 
+Shortcuts have, over time, become part of the system.
 
+A developer who directs the work does not ask the agent to “clean up” such a project.
 
-מתכנת שמכוון עבודה לא נותן לסוכן לרוץ ולתקן טסטים אוטומטית.  
+They ask it first to understand how things actually work here.
 
+Where changes usually pass through.
 
-הוא קודם שואל:  
+Which files are touched carefully.
 
-- מה הטסט הזה ניסה להגן עליו  
-- האם ההתנהגות שהוא בודק עדיין רצויה  
-- והאם הכישלון שלו הוא סימן לבעיה אמיתית או רק חוב ישן  
+And which mess is just mess, versus which signals a deeper constraint.
 
+Only after that distinction is clear
 
+is there room for improvement.
 
-רק אחרי שהשאלות האלה נענו,  
+And in many cases,
 
+the right decision is not to clean everything,
 
-יש טעם להחליט אם לתקן, לעדכן, או למחוק.  
+but to touch the minimum required to move forward without breaking things.
 
+### When There Are No Docs and No Order
 
+There are systems with almost no documentation.
 
-טסטים שבורים הם לא מכשול.  
+No diagrams.
 
+No explanations.
 
-הם הזדמנות להבין את הפער בין איך שהמערכת אמורה לעבוד  
+And sometimes no one left to ask.
 
+This is not an edge case.
 
-לאיך שהיא באמת עובדת היום.  
+It is a common reality.
 
+When a code agent enters such an environment,
 
+it has no anchors.
 
-### CI שלא עובר
+Nothing to compare against.
 
-CI הם בדיקות אוטומטיות שרצות בכל שינוי קוד.  
+No external “truth” to validate its assumptions.
 
+In this situation, the biggest risk is moving forward too fast.
 
-המטרה שלהן פשוטה: לבדוק שהמערכת עדיין עובדת אחרי שינוי.  
+Changing before understanding.
 
+Building on guesses that sound reasonable.
 
+A developer who directs the work slows down intentionally.
 
-במערכת אידיאלית, אם ה-CI אדום, משהו באמת לא תקין.  
+They use the code itself as documentation.
 
+They read flows.
 
-במערכת אמיתית, זה לא תמיד המצב.  
+They look for connection points.
 
+And they move in small, reversible steps.
 
+The agent can help a lot here,
 
-לפעמים ה-CI נשבר בגלל שינוי ישן.  
+but only if you give it the right role:
 
+not “to fix”,
 
-לפעמים בגלל בדיקות שלא עודכנו.  
+but “to discover”.
 
+To identify how the system actually works today,
 
-ולפעמים פשוט כי אף אחד לא טיפל בזה בזמן.  
+before trying to change it.
 
+When you work this way,
 
+even a system without docs and without order
 
-כשסוכן קוד פוגש CI שלא עובר,  
+becomes something you can understand,
 
-
-הוא נוטה לראות בזה בעיה שחייבים לפתור מיד.  
-
-
-
-לתקן בדיקות.  
-
-
-לעדכן קונפיגורציה.  
-
-
-או “לסדר” את המערכת כדי שהכול יהיה ירוק.  
-
-
-
-ופה צריך לעצור.  
-
-
-
-CI שלא עובר הוא לא בהכרח חלק מהמשימה.  
-
-
-לפעמים הוא רק הרקע.  
-
-
-
-מתכנת שמכוון עבודה לא נותן לסוכן לרדוף אחרי ירוק בכל מחיר.  
-
-
-הוא קודם מגדיר:  
-
-- האם הבדיקות האלה רלוונטיות לשינוי הנוכחי  
-- אילו כשלים באמת חוסמים  
-- ואילו אפשר להשאיר לטיפול נפרד  
-
-
-
-CI הוא כלי חשוב,  
-
-
-אבל גם אותו צריך לדעת לנהל, לא רק לציית לו.  
-
-
-
-### פרויקטים מבולגנים
-
-לא כל פרויקט מסודר כמו בספרים.  
-
-
-ובמציאות, רובם לא.  
-
-
-
-תיקיות בלי היגיון ברור.  
-
-
-קבצים עם שמות כלליים מדי.  
-
-
-קוד שנוגע בכמה אחריות בו זמנית.  
-
-
-
-זה לא חריג.  
-
-
-זה היומיום.  
-
-
-
-כשסוכן קוד נכנס לפרויקט מבולגן,  
-
-
-הוא מחפש סדר.  
-
-
-
-הוא מנסה לארגן, לאחד, “לנקות”.  
-
-
-
-אבל ניקיון בלי הבנה הוא מתכון לבעיות.  
-
-
-
-בפרויקט מבולגן, הסדר החיצוני לא תמיד משקף את הסדר הפנימי.  
-
-
-דברים שנראים מקריים מחוברים עמוק ללוגיקה עסקית.  
-
-
-וקיצורי דרך הפכו עם הזמן לחלק מהמערכת.  
-
-
-
-מתכנת שמכוון עבודה לא מבקש מהסוכן “לעשות סדר” בפרויקט כזה.  
-
-
-הוא מבקש ממנו קודם להבין איך עובדים כאן באמת.  
-
-
-
-איפה השינויים עוברים בדרך כלל.  
-
-
-איזה קבצים נוגעים בהם בזהירות.  
-
-
-ואיזה בלגן הוא רק בלגן, ואיזה הוא סימן לאילוץ עמוק יותר.  
-
-
-
-רק אחרי שההבחנה הזו ברורה,  
-
-
-יש מקום לשיפור.  
-
-
-
-ובלא מעט מקרים,  
-
-
-ההחלטה הנכונה היא לא לסדר הכול,  
-
-
-אלא לגעת במינימום שנדרש כדי להתקדם בלי לשבור דברים.  
-
-
-
-### מה עושים כשאין מסמכים ואין סדר
-
-יש מערכות שבהן אין כמעט תיעוד.  
-
-
-אין תרשימים.  
-
-
-אין הסברים.  
-
-
-ולפעמים גם אין מי לשאול.  
-
-
-
-זה לא מקרה קצה.  
-
-
-זו מציאות נפוצה.  
-
-
-
-כשסוכן קוד נכנס לסביבה כזו,  
-
-
-הוא נשאר בלי עוגנים.  
-
-
-
-אין לו למה להשוות.  
-
-
-אין לו “אמת” חיצונית לבדוק מולה את ההנחות שלו.  
-
-
-
-במצב כזה, הסיכון הגדול ביותר הוא לרוץ קדימה מהר מדי.  
-
-
-לשנות לפני שמבינים.  
-
-
-ולבנות על ניחושים שנשמעים סבירים.  
-
-
-
-מתכנת שמכוון עבודה מאט בכוונה.  
-
-
-הוא משתמש בקוד עצמו כמסמך.  
-
-
-
-קורא זרימות.  
-
-
-מחפש נקודות חיבור.  
-
-
-ומתקדם בצעדים קטנים שניתנים לביטול.  
-
-
-
-הסוכן יכול לעזור כאן מאוד,  
-
-
-אבל רק אם מגדירים לו תפקיד נכון:  
-
-
-לא “לתקן”,  
-
-
-אלא “לגלות”.  
-
-
-
-לזהות איך המערכת באמת עובדת היום,  
-
-
-לפני שמנסים לשנות אותה.  
-
-
-
-וברגע שעובדים כך,  
-
-
-גם מערכת בלי מסמכים ובלי סדר  
-
-
-הופכת למשהו שאפשר להבין,  
-
-
-ולאט לאט גם לשפר.
+and slowly, also improve.
