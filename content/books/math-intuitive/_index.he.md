@@ -1,6 +1,6 @@
 ---
 title: "מתמטיקה אינטואיטיבית למתכנתים לעידן ה-AI"
-weight: 2
+weight: 3
 bookCollapseSection: true
 bookCover: "img/over_math_intuitive.png"
 

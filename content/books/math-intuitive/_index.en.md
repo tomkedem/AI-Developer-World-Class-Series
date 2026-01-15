@@ -1,6 +1,6 @@
 ---
 title: "Intuitive Math for AI-Era Developers"
-weight: 2
+weight: 3
 bookCollapseSection: true
 bookCover: "img/over_math_intuitive.png"
 ---

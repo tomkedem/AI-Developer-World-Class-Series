@@ -1,6 +1,6 @@
 ---
 title: "The Digital Work Manager for Developers"
-weight: 3
+weight: 2
 bookCollapseSection: true
 bookCover: "img/cover_digital_work_manager.png"
 ---
