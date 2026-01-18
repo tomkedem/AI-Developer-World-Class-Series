@@ -1,6 +1,6 @@
 ---
 title: "מנהל העבודה הדיגיטלי למתכנתים"
-weight: 0
+weight: 1
 bookCollapseSection: true
 bookCover: "img/cover_digital_work_manager.png"
 ---
